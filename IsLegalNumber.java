@@ -12,7 +12,7 @@ public class IsLegalNumber {
     System.out.println(isLegalNumber(a, base));
   }
 
-  static int isLegalNumber(int[] a, int base) {
+  public static int isLegalNumber(int[] a, int base) {
     for (int i = 0; i < a.length; i++) {
       if (a[i] < 0 || a[i] > base) {
         return 0;
