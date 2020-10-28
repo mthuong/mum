@@ -16,12 +16,15 @@ public class IsIsolated {
 
     System.out.println(isIsolated(4));
     System.out.println(isIsolated(70));
+    System.out.println(isIsolated(1));
 
     System.out.println(isIsolated(2097152));
+    System.out.println(isIsolated(0));
+    System.out.println(isIsolated(-1));
   }
 
   static int isIsolated(long n) {
-    if (n > 2097151) {
+    if (n > 2097151 || n < 1) {
       return -1;
     }
     long square = n * n;
