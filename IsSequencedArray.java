@@ -17,6 +17,26 @@ public class IsSequencedArray {
     m = -5;
     n = -2;
     System.out.println(isSequencedArray(a, m, n));
+
+    a = new int[] { 0, 1, 2, 3, 4, 5 };
+    m = 1;
+    n = 5;
+    System.out.println(isSequencedArray(a, m, n));
+
+    a = new int[] { 1, 2, 3, 4, };
+    m = 1;
+    n = 5;
+    System.out.println(isSequencedArray(a, m, n));
+
+    a = new int[] { 1, 2, 5 };
+    m = 1;
+    n = 5;
+    System.out.println(isSequencedArray(a, m, n));
+
+    a = new int[] { 5, 4, 3, 2, 1 };
+    m = 1;
+    n = 5;
+    System.out.println(isSequencedArray(a, m, n));
   }
 
   static int isSequencedArray(int[] a, int m, int n) {
@@ -31,6 +51,9 @@ public class IsSequencedArray {
       } else {
         isSequencedArray = 0;
       }
+    }
+    if (currentSequenceNumber != n) {
+      isSequencedArray = 0;
     }
 
     return isSequencedArray;
