@@ -25,6 +25,10 @@ public class AreAnagrams {
     a1 = new char[] { 'b', 'i', 'g' };
     a2 = new char[] { 'b', 'i', 'g' };
     System.out.println(areAnagrams(a1, a2));
+
+    a1 = new char[] { 'p', 'o', 'o', 'l' };
+    a2 = new char[] { 'p', 'o', 'l', 'l' };
+    System.out.println(areAnagrams(a1, a2));
   }
 
   static int areAnagrams(char[] a1, char[] a2) {
