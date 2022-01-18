@@ -1,0 +1,17 @@
+{
+  "javamain": {
+    "prefix": "javamain",
+    "body": [
+      "public static void main(String[] args) {",
+      "    int n = 0;",
+      "    System.out.println($1(n));",
+      "  }",
+      "",
+      "  static int $1(int n) {",
+      "    ",
+      "  }"
+    ],
+    "description": "java main",
+    "scope": "java"
+  }
+}
