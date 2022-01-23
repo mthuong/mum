@@ -1,16 +1,16 @@
 package mpp;
 
-class Node {
-	public Node nextNode;
-	public int value;
-
-	public Node(int value) {
-		this.value = value;
-		this.nextNode = null;
-	}
-}
-
 class SinglyLinkedList {
+	class Node {
+		public Node nextNode;
+		public int value;
+	
+		public Node(int value) {
+			this.value = value;
+			this.nextNode = null;
+		}
+	}
+	
 	public static void main(String[] args) {
 		SinglyLinkedList list = new SinglyLinkedList();
 		list.addNode(0);
