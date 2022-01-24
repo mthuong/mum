@@ -1,18 +1,36 @@
-package mpp;
+package mpp.LinkedList;
 
-class DoublyLinkedList {
+public class CircularLinkedList {
+  public static void main(String[] args) {
+    CircularLinkedList list = new CircularLinkedList();
+    list.addNode(0);
+    list.addNode(1);
+    list.addNode(2);
+    list.addNode(3);
+    list.addNode(4);
+    list.addNode(5);
+    list.printNodes();
+    list.removeNode(2);
+    list.printNodes();
+    list.addFirst(-1);
+    list.printNodes();
+    list.addLast(6);
+    list.printNodes();
+    list.removeFirst();
+    list.removeLast();
+    list.printNodes();
+  }
+
   class Node {
     public Node nextNode;
-    public Node previousNode;
     public int value;
-  
+
     public Node(int value) {
       this.value = value;
       this.nextNode = null;
-      this.previousNode = null;
     }
   }
-  
+
   Node head;
   Node tail;
 
@@ -22,9 +40,9 @@ class DoublyLinkedList {
       head = node;
       tail = node;
     } else {
-      node.previousNode = tail;
       tail.nextNode = node;
       tail = node;
+      node.nextNode = head;
     }
   }
 
@@ -34,63 +52,40 @@ class DoublyLinkedList {
     if (temp == null) {
       return false;
     }
-    // If the value is head.
-    if (temp.value == value) {
+    // if value is at the top.
+    if (temp != null && temp.value == value) {
       head = head.nextNode;
       return true;
     }
-    // Search node.
+    // Search value
     while (temp != null && temp.value != value) {
       prev = temp;
       temp = temp.nextNode;
     }
-    // No item is available.
+    // Result not found.
     if (temp == null) {
       return false;
     }
+    // Implement next node.
     prev.nextNode = temp.nextNode;
-    if (temp.nextNode != null) {
-      Node afterTempNode = temp.nextNode;
-      afterTempNode.previousNode = prev;
-    }
     return true;
   }
 
-  public void printNodesFromHead() {
+  public void printNodes() {
     Node temp = head;
-    System.out.print("Head: [");
+    System.out.print("[");
     // No item available.
     if (head == null) {
-
       return;
     }
-    while (temp != null) {
+    do {
       if (temp.nextNode != null) {
         System.out.print(temp.value + ", ");
       } else {
         System.out.print(temp.value);
       }
       temp = temp.nextNode;
-    }
-    System.out.print("]");
-    System.out.println();
-  }
-
-  public void printNodesFromTail() {
-    Node temp = tail;
-    System.out.print("Tail: [");
-    // No item available.
-    if (tail == null) {
-      return;
-    }
-    while (temp != null) {
-      if (temp.previousNode != null) {
-        System.out.print(temp.value + ", ");
-      } else {
-        System.out.print(temp.value);
-      }
-      temp = temp.previousNode;
-    }
+    } while (temp != head);
     System.out.print("]");
     System.out.println();
   }
@@ -101,10 +96,9 @@ class DoublyLinkedList {
       head = node;
       tail = node;
     } else {
-      head.previousNode = node;
-
       node.nextNode = head;
       head = node;
+      tail.nextNode = head;
     }
   }
 
@@ -114,8 +108,8 @@ class DoublyLinkedList {
       head = node;
       tail = node;
     } else {
-      node.previousNode = tail;
       tail.nextNode = node;
+      node.nextNode = head;
       tail = node;
     }
   }
@@ -125,35 +119,20 @@ class DoublyLinkedList {
       return;
     }
     head = head.nextNode;
+    tail.nextNode = head;
   }
 
   public void removeLast() {
+    Node temp = head;
+    Node prev = null;
     if (head == null) {
       return;
     }
-    Node temp = head;
-    Node prev = null;
-    while (temp.nextNode != null) {
+    do {
       prev = temp;
       temp = temp.nextNode;
-    }
-    prev.nextNode = null;
-  }
-
-  public static void main(String[] args) {
-    DoublyLinkedList list = new DoublyLinkedList();
-    list.addNode(0);
-    list.addNode(1);
-    list.addNode(2);
-    list.addNode(3);
-    list.addNode(4);
-    list.addNode(5);
-    list.printNodesFromHead();
-    list.printNodesFromTail();
-    list.removeNode(2);
-    list.addLast(7);
-    list.printNodesFromHead();
-    list.removeLast();
-    list.printNodesFromHead();
+    } while (temp.nextNode != head);
+    prev.nextNode = head;
+    tail = prev;
   }
 }

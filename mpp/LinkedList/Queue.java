@@ -1,4 +1,4 @@
-package mpp;
+package mpp.LinkedList;
 
 public class Queue {
   class Node {

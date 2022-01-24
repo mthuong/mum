@@ -1,4 +1,4 @@
-package mpp;
+package mpp.LinkedList;
 
 class SinglyLinkedList {
 	class Node {
