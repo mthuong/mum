@@ -1,4 +1,4 @@
-package mpp;
+package mpp.AbstractClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class AbstractClass {
 class Dog extends Animal {
   @Override
   public int countFingers() {
-    // TODO Auto-generated method stub return 4;
+    // TODO Auto-generated method stub
     return 4;
   }
 }
@@ -31,7 +31,7 @@ class Dog extends Animal {
 class Cat extends Animal {
   @Override
   public int countFingers() {
-    // TODO Auto-generated method stub return 4;
+    // TODO Auto-generated method stub
     return 4;
   }
 }
@@ -39,7 +39,7 @@ class Cat extends Animal {
 class Chicken extends Animal {
   @Override
   public int countFingers() {
-    // TODO Auto-generated method stub return 2;
+    // TODO Auto-generated method stub
     return 2;
   }
 }
