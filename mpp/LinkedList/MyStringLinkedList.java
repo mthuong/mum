@@ -128,10 +128,15 @@ public class MyStringLinkedList {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		MyStringLinkedList list = new MyStringLinkedList();
-        list.addLast("Harry");
+		String min = list.findMin();
+		System.out.println(min);
+		list.addLast("Harry");
         list.addLast("Bob");
         list.addLast("Steve");
-        String min = list.findMin();
+        min = list.findMin();
+        System.out.println(min);
+        list.addLast("Aaron");
+        min = list.findMin();
         System.out.println(min);
 	}
 
