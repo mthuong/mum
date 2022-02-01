@@ -1,4 +1,4 @@
-package mpp.LinkedList.MyStringStack;
+package mpp.LinkedList;
 
 public class MyStringStack {
 
