@@ -14,6 +14,10 @@ public class MyArrayList {
 		String removeValue = array.remove(1);
 		System.out.println("Removed value: " + removeValue);
 		System.out.println(array.toString());
+		array.add("D");
+		System.out.println(array.toString());
+		array.remove(array.size - 1);
+		System.out.println(array.toString());
 	}
 
 	// DO NOT MODIFIED THIS LINE OF CODE
@@ -50,7 +54,7 @@ public class MyArrayList {
 			String value = arr[i];
 			if (value == null)
 				continue;
-			
+
 			if (i != 0) {
 				result += ",";
 			}
@@ -59,26 +63,23 @@ public class MyArrayList {
 		result += "]";
 		return result;
 	}
-	
+
 	public String remove(int k) {
 		if (k > size || k < 0) {
 			return null;
 		}
 		String kValue = arr[k];
-		String[] temp = new String[size-1];
 		for (int i = 0; i < size - 1; i++) {
-			if (i < k) {
-				temp[i] = arr[i];
-			} else {
-				temp[i] = arr[i+1];
+			if (i >= k) {
+				arr[i] = arr[i + 1];
 			}
 		}
-		// Update array
-		arr = temp;
-		
+		// Update last item
+		arr[size - 1] = null;
+
 		// Update size
 		size--;
-		
+
 		return kValue;
 	}
 }
