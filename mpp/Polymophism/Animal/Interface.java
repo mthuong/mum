@@ -1,4 +1,4 @@
-package mpp.Interface;
+package mpp.Polymophism.Animal;
 
 import java.util.ArrayList;
 import java.util.List;
