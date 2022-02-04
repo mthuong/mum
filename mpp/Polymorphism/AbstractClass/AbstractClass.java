@@ -1,9 +1,9 @@
-package mpp.Polymophism.Animal;
+package mpp.Polymorphism.AbstractClass;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Interface {
+public class AbstractClass {
   public static void main(String[] args) {
     Dog dog = new Dog();
     Cat cat = new Cat();
@@ -20,7 +20,7 @@ public class Interface {
   }
 }
 
-class Dog implements Animal {
+class Dog extends Animal {
   @Override
   public int countFingers() {
     // TODO Auto-generated method stub
@@ -28,7 +28,7 @@ class Dog implements Animal {
   }
 }
 
-class Cat implements Animal {
+class Cat extends Animal {
   @Override
   public int countFingers() {
     // TODO Auto-generated method stub
@@ -36,7 +36,7 @@ class Cat implements Animal {
   }
 }
 
-class Chicken implements Animal {
+class Chicken extends Animal {
   @Override
   public int countFingers() {
     // TODO Auto-generated method stub
@@ -44,6 +44,6 @@ class Chicken implements Animal {
   }
 }
 
-interface Animal {
-  public int countFingers();
+abstract class Animal {
+  abstract public int countFingers();
 }
